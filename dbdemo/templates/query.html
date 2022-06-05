@@ -1,0 +1,98 @@
+{% extends 'index.html' %}
+
+{% block content %}	
+<br>
+		<h1>--------{{tablename1}}--------</h1>
+                        <table class="table table-light table-bordered">
+                            <thead class="table-dark"> 
+							<tr>
+                                    <th>ID</th>
+									<th>TITLE</th>
+									<th>START<h>
+									<th>END</th>
+									<th>BUDGET</th>
+									<th>ADMIN ID</th>
+									<th>PROGRAM NAME</th>
+									<th>EVALUATION ID</th>
+									<th>EVALUATION RESEARCHER ID</th>
+									<th>ORGANIZATION NAME</th>
+									<th>CHIEF RESEARCHER ID</th>
+									<th>BRIEF</th>
+									<th>DURATION in years</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+								
+								{% for proj in table %}
+                                    <tr>
+										<td> {{ proj.ID }} </td>
+                                        <td> {{ proj.project_title }} </td>
+                                        <td> {{ proj.project_start }} </td>
+                                        <td> {{ proj.project_end }} </td>
+                                        <td> {{ proj.budget }} </td>
+                                        <td> {{ proj.admin_id }} </td>
+                                        <td> {{ proj.program_name }} </td>
+                                        <td> {{ proj.evaluation_id }} </td>
+										<td> {{ proj.researcher_id }} </td>
+                                        <td> {{ proj.org_name }} </td>
+										<td> {{ proj.chief_researcher}} </td>
+										<td> {{ proj.project_brief}} </td>
+										<td> {{ proj.duration }} </td>
+										
+									
+                                {% endfor %}
+                            </tbody>
+							<br>
+			<div class="container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+
+        <div class="col-md-12">				
+			<form class="form-horizontal" name="project-form" method="POST">
+                <!-- hidden_tag returns the form's security metadata -->
+                {{ form.hidden_tag() }}
+                <div class="form-group col-sm-10 mb-3">
+                    {{ form.admin_id.label(class = "form-label") }}
+                    <!-- Setting required to false disables the HTML attribute and leaves input validation to the backend -->
+                    {{ form.admin_id(class = "form-control", placeholder="Enter Admin", required = False) }}
+                    {% if form.admin_id.errors %}
+                    <ul class = "errors">
+                        {% for error in form.admin_id.errors %}
+                        <li class = "text-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>  
+				<div class="form-group col-sm-10 mb-3">
+						{{ form.date.label(class = "form-label") }}
+						<!-- Setting required to false disables the HTML attribute and leaves input validation to the backend -->
+						{{ form.date(class = "form-control", placeholder="Enter Date", required = False) }}
+						{% if form.date.errors %}
+						<ul class = "errors">
+							{% for error in form.date.errors %}
+							<li class = "text-danger">{{ error }}</li>
+							{% endfor %}
+						</ul>
+						{% endif %}
+                </div>       
+						<div class="form-group col-sm-10 mb-3">
+						{{ form.duration.label(class = "form-label") }}
+						<!-- Setting required to false disables the HTML attribute and leaves input validation to the backend -->
+						{{ form.duration(class = "form-control", placeholder="Enter Duration", required = False) }}
+						{% if form.duration.errors %}
+						<ul class = "errors">
+							{% for error in form.duration.errors %}
+							<li class = "text-danger">{{ error }}</li>
+							{% endfor %}
+						</ul>
+                    {% endif %}
+                </div>       				
+				{{ form.submit(class = "btn btn-primary btn-submit-custom") }}
+				
+            </form>
+	 <a class="btn btn-primary" id="show-btn" href="/query1">Show Researchers</a>	
+		</div>
+	</div>		
+</div>
+{% endblock content%}

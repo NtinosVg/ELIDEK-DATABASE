@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block content %}
+				<h1>--------{{tablename1}}--------</h1>
+					<div class="table-responsive">
+                        <table class="table table-light table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+									<th>Name</th>
+                                    <th>Last Name</th>
+									<th>Number of Projects without Deliverables</th>
+									
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for re in res %}
+									<tr>
+										<td> {{ re.researcher_name }}</td>
+										<td> {{ re.researcher_lastname }} </td>
+                                        <td> {{ re.project_with_no_deliverables }}</td>
+									</tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+					
+         
+{% endblock content%}

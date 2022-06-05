@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content %}
+				<h1>--------{{tablename1}}--------</h1>
+					<div class="table-responsive">
+                        <table class="table table-light table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+									<th>Reasearcher First Name</th>
+                                    <th>Researcher Last Name</th>
+									<th>ID</th>
+									<th>Spots In projects</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for researcher in researchers %}
+								
+									<tr>
+										<td> {{ researcher.researcher_name }}</td>
+										<td> {{ researcher.researcher_lastname }} </td>
+                                        <td> {{ researcher.id }} </td>
+										<td> {{ researcher.spots_in_projects}} </td>
+									</tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+					
+         
+{% endblock content%}

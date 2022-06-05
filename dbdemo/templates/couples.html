@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+				<h1>--------{{tablename1}}--------</h1>
+					<div class="table-responsive">
+                        <table class="table table-light table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+									<th>Ranking</th>
+                                    <th>Field 1</th>
+									<th>Field 2</th>
+									<th>Count</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for couple in Couples %}
+								
+									<tr>
+										<td> {{ couple.Ranking }}</td>
+										<td> {{ couple.Field1 }} </td>
+                                        <td> {{ couple.Field2 }} </td>
+										<td> {{ couple.occurences}} </td>
+									</tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+					
+         
+{% endblock content%}

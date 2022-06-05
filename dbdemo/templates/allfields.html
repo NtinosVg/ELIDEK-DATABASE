@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+				<h1>--------{{tablename1}}--------</h1>
+
+					<div class="table-responsive">
+                        <table class="table table-light table-bordered">
+                            <thead class="table-dark">
+                                 <tr>
+                                    <th>TITLE</th>
+									
+                                </tr>
+                            </thead>
+                            <tbody>
+				
+                                {% for field in table %}
+                                    <tr>
+							
+										 <td> {{ field.field_name }} </td>
+                                     
+               
+                                {% endfor %}
+                            </tbody>
+						</table>
+                </div>
+         
+{% endblock content%}

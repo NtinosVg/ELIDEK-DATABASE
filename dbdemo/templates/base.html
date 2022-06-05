@@ -1,0 +1,137 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container" id="row-container">
+    {% include "flash_messages.html" %}
+
+		<div class="row" id="row">
+		 <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">3.1 Show All Programs</h4>
+                    <p class="card-text" id="paragraph">3.1. Query the database to show all the current Elidek Programs<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/programs">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">3.1 Show Projects</h4>
+                    <p class="card-text" id="paragraph">3.1 Show projects based on admin id<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/query">Show</a>
+                </div>
+            </div>
+        </div>
+		<div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+				
+                    <h4 class="card-title">3.2 Show Views</h4>
+                    <p class="card-text" id="paragraph">3.2 Choose between 2 choices to show a view of the relational model<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/views">Show</a>
+                </div>
+            </div>
+        </div>
+		
+		  
+		
+		</div>
+		 <div class="row" id="row-2">
+		 
+		  <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">3.3 Show Projects related to a Field</h4>
+                    <p class="card-text" id="paragraph">3.4 Input an interesting field<br></p>
+					<a class="btn btn-primary" id="show-btn" href="/fields">Input</a>
+                </div>
+            </div>
+        </div>
+		 <div class="col-md-4">
+		   <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+					<div class="table-responsive">
+                        
+                    <h4 class="card-title">3.4 Show Organizations</h4>
+                    <p class="card-text" id="paragraph">3.4 Show organizations with the same numberof projects in 2 consecutive years</p>
+                    <a class="btn btn-primary" id="show-btn" href="/samenumber">Show</a>
+                </div>
+            </div>
+		</div>
+		</div>
+
+		
+		<div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">3.5 Show Couples of Fields</h4>
+                    <p class="card-text" id="paragraph">3.5 Show the most popular pairs of Fields<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/couples">Show</a>
+                </div>
+            </div>
+        </div>
+		</div>
+		<br>
+		<div class="row" id="row-3">
+        
+		<div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">3.6 Show young researchers</h4>
+                    <p class="card-text" id="paragraph">3.6 Show the youngest researchers that work on the most projects<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/researchers">Show</a>
+                </div>
+            </div>
+        </div>
+		
+		<div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">3.7 Show admins</h4>
+                    <p class="card-text" id="paragraph">3.7 Show the most generous admins</p>
+					<a class="btn btn-primary" id="show-btn" href="/admins">Show</a>
+                </div>
+            </div>
+        </div>
+	
+        
+            
+		
+		<div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">3.8 Show researchers without deliverables</h4>
+                    <p class="card-text" id="paragraph">3.8 Show researchers that work on projects without deliverables</p>
+					<a class="btn btn-primary" id="show-btn" href="/res">Show</a>
+                </div>
+            </div>
+        </div>
+        
+		
+		
+		  
+        </div>
+		<div class="row" id="row-4">
+		 <div class="col-md-6">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Show All Fields</h4>
+                    <p class="card-text" id="paragraph"> Query the database to show all the research fields<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/allfields">Show</a>
+                </div>
+            </div>
+        </div>
+		
+        <div class="col-md-6">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Add New Field</h4>
+                    <p class="card-text" id="paragraph">Add a new research field to the elidek database<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/newfield">Add</a>
+                </div>
+            </div>
+        </div>
+
+		</div>
+{% endblock content%}

@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+				<h1>--------{{tablename1}}--------</h1>
+					<div class="table-responsive">
+                        <table class="table table-light table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+									<th>Admin Name</th>
+                                    <th>Company Name</th>
+									<th>Total Funds</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for admin in admins %}
+									<tr>
+										<td> {{ admin.admin_name }}</td>
+										<td> {{	admin.private_company_name }} </td>
+                                        <td> {{ admin.total_funds }} </td>
+									</tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+					
+         
+{% endblock content%}
